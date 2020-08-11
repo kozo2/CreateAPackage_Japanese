@@ -227,7 +227,7 @@ will contain at least two biocViews categories that reflect the nature of the
 package.
 
 パッケージの開発中は、他のパッケージからより多くの機能を組み込むように、
-適切な Depends, Imports, そして Suggests フィールドの DESCRIPTION ファイル
+適切な Depends, Imports, そして Suggests フィールドのために DESCRIPTION ファイル
 を更新しなければならないかもしれません。
 パッケージの開発中は、DESCRIPTIONファイルに `biocViews:` フィールドも必要です。
 このフィールドはパッケージの性質を反映する少なくとも2つの biocViews カテゴリ
@@ -245,18 +245,44 @@ is growing increasingly popular. Some helpful links for roxygen tags can be
 found at [RStudio Devtools Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf) and 
 [Roxygen Help](https://cran.rstudio.com/web/packages/roxygen2/vignettes/rd.html).
 
+次に、R の関数を書くことを始めます。
+RStudioでは、 `File -> New File` を実行してRスクリプトを選択することにより、空のファイルを開くことができます。
+そのファイルをRディレクトリに保存しましょう。
+次にあなたの関数とドキュメントを書きましょう。
+関数のドキュメントを書くのは手作業でもできますし、roxygenを使うならdevtoolsの `document()` 関数を使うこともできます。
+manディレクトリにあるRdファイルの手作業の作成には、[Writing R extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
+を参照してください。
+ただしroxygenの人気が次第に高まりつつあります。
+roxygen のタグに役立つリンクは、
+[RStudio Devtools Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf)
+と 
+[Roxygen Help](https://cran.rstudio.com/web/packages/roxygen2/vignettes/rd.html)
+にあります。
+
 Some useful `devtools` commands while creating functions are:
 
+関数の作成中に役立ついくつかの `devtools` のコマンドは次のとおりです:
+
 * `load_all()` which loads all package functions in environment to test,
+テストする環境ですべてのパッケージ関数をロードします,
 * `check()` which checks the package (R CMD check),
+パッケージをチェックします (R CMD check を実行します),
 * `document()` which generates or updates any documentation files.
+ドキュメントファイルを生成または更新します。
 
 Using the RStudio options `Build -> Build and Reload` and `Build -> Clean 
 and Rebuild` will also help with function creation.
 
+RStudio のオプションの `Build -> Build and Reload` と
+`Build -> Clean and Rebuild` を使うことは、関数の作成にも役立ちます。
+
 It is also recommended to have a man page for you package. `devtools` provides 
 a framework for this. To create the file that needs to be modified use the 
-function `use_package_doc()`. 
+function `use_package_doc()`.
+
+パッケージ用のmanページを用意することもお勧めします。
+`devtools` はこのためのフレームワークを提供します。
+修正が必要なファイルを作成するには、関数 `use_package_doc()` を使います。
 
 If you import any functions in your code, don't forget to update the DESCRIPTION 
 file for Depends, Imports, or Suggests. If the function provides essential 
@@ -266,6 +292,17 @@ functions, methods, or classes that are used inside your package namespace, they
 belong in Imports. Most packages will be listed here. For packages that are used 
 in vignettes, examples, or conditional code, they should be listed as Suggests. 
 This includes examples that may use annotation and/or experiment packages.
+
+コードに関数をインポートする場合は、Depends、Imports、またはSuggestsのために
+DESCRIPTION ファイルを更新することを忘れないでください。
+関数がパッケージのユーザーに不可欠な機能を提供する場合、それはDependsに属します。
+Dependsとして3つ以上のパッケージがリストされるのは珍しいことです。
+あなたのパッケージの名前空間内で使用される関数、メソッド、またはクラスを提供する
+パッケージの場合、それらは Imports に属します。
+ほとんどのパッケージがここにリストされます。
+ビネット、例、または条件付きコードで使われるパッケージの場合、
+それらは Suggests としてリストされている必要があります。
+これには、annotation や experiment パッケージを使う例が含まれます。
 
 ## Testing
 
