@@ -343,6 +343,15 @@ a vignette. For Bioconductor submissions we recommend changing the `output:`
 section for the vignette header to the following, which would require adding 
 `BiocStyle` to the Suggests field in the DESCRIPTION file, 
 
+ビネットは、パッケージのもう1つの主要なドキュメントです。
+ますます多くのリポジトリシステム (CRAN, Bioconductor, ROpenSci) がビネットを標準要件にしています。
+ビネットは、より詳細な説明とパッケージの使用例を含みます。
+`devtools` は、ビネットのためのディレクトリ構造と初期ファイルをセットアップする関数
+`use_vignette()` も提供します。
+Bioconductor への(訳注:パッケージ)提出の場合、ビネットのヘッダーの
+`output:` のセクションを次のように変更することをお勧めします。
+これには DESCRIPTION ファイルの Suggests フィールドに `BiocStyle` を追加する必要があります。
+
 ```
 output:
   BiocStyle::html_document:
@@ -354,8 +363,17 @@ Or if `BiocStyle` is already installed on your system, you can also use RStudio
 to set up the vignette by doing `New File -> Rmarkdown -> From Template -> 
 Bioconductor HTML/PDF Vignette`.
 
+また、 `BiocStyle` がすでにあなたのシステムにインストールされている場合は、
+RStudio を使って、
+`New File -> Rmarkdown -> From Template -> Bioconductor HTML/PDF Vignette`
+でそのビネットをセットアップすることもできます。
+
 A helpful rmarkdown link, which is commonly used for vignette creation, can be 
 found here: [rmarkdown cheatsheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf).
+
+ビネットの作成のためによく使われる便利なrmarkdownのリンクは、
+[rmarkdown cheatsheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+にあります。
 
 ### Bioconductor Standards
 
