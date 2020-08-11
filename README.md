@@ -436,3 +436,14 @@ The Title: should be the name of your package. Once the package is approved for
 building, don't forget to set up the [remotes](https://bioconductor.org/developers/how-to/git/new-package-workflow/). 
 Some details about the review process can be found [here](http://bioconductor.org/developers/package-submission/#whattoexpect).
 
+[Contributions Page](https://github.com/Bioconductor/Contributions)
+を必ず読んで、提出する準備ができたら、
+[New Issue](https://github.com/Bioconductor/Contributions/issues)
+を開いてください。
+(訳注:issueの) Title: はあなたのパッケージの名前にすべきです。
+そのパッケージのビルドが承認されたら、
+[remotes](https://bioconductor.org/developers/how-to/git/new-package-workflow/)
+をセットアップすることを忘れないでください。
+レビュープロセスの詳細については、
+[こちら](http://bioconductor.org/developers/package-submission/#whattoexpect)
+をご覧ください。
