@@ -381,7 +381,11 @@ Now that we have gone over the basics of how to create a package, we will review
 what we look for (generally) in Bioconductor packages. Being mindful of these 
 guidelines while developing your package will help the whole submission process. 
 
-1. Proper coding and efficient coding:
+パッケージを作成する方法の基本を説明したので、我々が Bioconductor のパッケージで(一般的に)期待するものを
+説明します。
+パッケージを開発する際にこれらのガイドラインに注意することは、(訳注:パッケージの)提出プロセス全体に役立ちます。
+
+1. Proper coding and efficient coding: 適切なコーディングと効率的なコーディング：
 
 * [Efficient and Robust Code](http://bioconductor.org/developers/how-to/efficient-code/)
 * [Query Web Resource](http://bioconductor.org/developers/how-to/web-query/)
@@ -389,7 +393,7 @@ guidelines while developing your package will help the whole submission process.
 2. Bioconductor interconnectivity and S4 classes
 
 * S4 over S3 classes
-* Reuse existing infrastructure first!
+* Reuse existing infrastructure first! まず既存のインフラストラクチャを再利用してください!
     + DNA/RNA - `Biostrings` `DNAstringset`
     + Gene sets - `GSEABase` `GeneSet`
     + Genomic intervals - `GenomicRanges` `Granges`
@@ -409,21 +413,26 @@ guidelines while developing your package will help the whole submission process.
 
 * [Unit test guidelines](http://bioconductor.org/developers/how-to/unitTesting-guidelines/)
 
-4. Complete and detailed vignette(s) and man pages, with executable examples
+4. Complete and detailed vignette(s) and man pages, with executable examples 完全で詳細なビネットとマニュアルページ、および実行可能な例
 
-5. Check time < 5 minutes
+5. Check time < 5 minutes Checkにかかる時間は5分未満となるように
 
-6. Package size < 5Mb
+6. Package size < 5Mb パッケージのサイズは5Mb未満となるように
 
-7. All package guidelines can be found [here](http://bioconductor.org/developers/package-guidelines/)
+7. All package guidelines can be found [here](http://bioconductor.org/developers/package-guidelines/) すべてのパッケージガイドラインは
+[こちら](http://bioconductor.org/developers/package-guidelines/) にあります
 
 **IMPORTANT**: A clean build, check, and BiocCheck is not a guaranteed acceptance. 
 The package will still go through a formal review process.
 
-### Submitting to Bioconductor
+**重要**: クリーンな build, check, そして BiocCheck は、(訳注:bioconductorへの)受け入れを保証するものではありません。
+パッケージはまだ正式な審査のプロセスの手続きを踏みます。
+
+### Submitting to Bioconductor (Bioconductorへの提出)
 
 Be sure to read the [Contributions Page](https://github.com/Bioconductor/Contributions) and 
 when you are ready to submit open a [New Issue](https://github.com/Bioconductor/Contributions/issues). 
 The Title: should be the name of your package. Once the package is approved for 
 building, don't forget to set up the [remotes](https://bioconductor.org/developers/how-to/git/new-package-workflow/). 
 Some details about the review process can be found [here](http://bioconductor.org/developers/package-submission/#whattoexpect).
+
