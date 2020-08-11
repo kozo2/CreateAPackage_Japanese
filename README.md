@@ -313,11 +313,24 @@ using `use_testthat()`. This function will set up the needed directory structure
 and add the package suggestion to the DESCRIPTION file. Here are some examples 
 of the structure of tests for `testthat`:
 
+パッケージに単体テストを追加することを強くお勧めします。
+(訳注:ただし)単体テストでは、パッケージが期待どおりに機能していることを確認できません。
+テストをするための2つの主な方法は、`RUnit` または `testthat` を使うことです。
+`testthat` の機能は、 `use_testthat()` を使うことで `devtools` に含まれます。
+この関数は、必要なディレクトリ構造をセットアップし、
+パッケージの提案を DESCRIPTION ファイルに追加します。
+`testthat` のテストの構造の例をいくつか示します。
+
 * `expect_identical()`,
 * `expect_true()`,
 * `expect_error()`.
 
 There are other options as well that are discussed in [testthat Wickham](https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf) and [testthat](http://r-pkgs.had.co.nz/tests.html).
+
+[testthat Wickham](https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
+と
+[testthat](http://r-pkgs.had.co.nz/tests.html)
+で話し合われているような他のオプションもあります。
 
 ## Vignettes
 
