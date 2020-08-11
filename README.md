@@ -72,6 +72,10 @@ especially when collaborating on a project, where multiple users are allowed to
 make changes. Version control allows for a constant recored of changes that can 
 be advanced or reverted if necessary.
 
+パッケージを作るときはいつでもバージョン管理を行うことをお勧めします。
+複数のユーザーが変更を加えることが許可されているプロジェクトで共同作業を行う場合は特にお勧めします。
+バージョン管理により、必要に応じて拡張または元に戻すことができる変更の一定した記録が可能になります。
+
 Only a project can be version controlled and to make a directory a project in 
 RStudio go to: `File -> New Project`. In this case we started creating the 
 directory so we will follow the prompts for the option `Use Existing Directory`. 
@@ -84,10 +88,26 @@ box next to any files that have been modified, added, or deleted that you would
 like to track, and select `commit`. Enter a new commit message in the window 
 that pops up and select `commit`.
 
+バージョン管理できるのは「プロジェクト」のみで、RStudioで あるディレクトリを「プロジェクト」
+にするには、 `File -> New Project` に移動します。
+この場合、すでにディレクトリの作成を開始した(訳注:後な)ので、`Use Existing Directory` オプションのプロンプトに従います。
+これでプロジェクトができたので、`Tools -> Version Control -> Project Setup` に移動して、
+`Version Control System` を `Git` に変更し、プロンプトに従います。
+RStudio の environments/history/build のペインに、'Git' という名前の新しいタブがあることに注意してください。
+パッケージはコミットを行い、 `git` のバージョン管理を使い始めることができるようになりました。
+コミットを行うには、Git タブに移動し、変更、追加、または削除されたファイルの横にあるチェックボックスを選択し、`commit` を選択します。
+そしてポップアップウィンドウに新しいコミットメッセージを入力し、 `commit` を選択しましょう。
+
 It is important to tell Git just who we are. In RStudio, select `Tools -> Shell` 
 and type the following making sure to substitue *your* user.email and user.name.
 If you have github we recommend using your email and user.name associated with 
 github here. 
+
+私たちが誰であるかをGitに伝えることは重要です。
+RStudioで、`Tools -> Shell` を選択し、次のように入力して、必ず *あなたの* 
+user.email と user.name に置き換えてください。
+github をお使いの場合は、githubに関連付けられているメールアドレスと user.name 
+をここで使用することをお勧めします。
 
 ```
 git config --global user.email "<someemail@gmail.com>"
@@ -106,6 +126,20 @@ created with `create()` in RStudio. Back in RStudio, select `Tools -> Shell` and
 type the following making usre to substitue your GitHub user.name and the new 
 package name.
 
+ここで止めることもできますが、パッケージを GitHub に配置することもできます。
+次の手順では、あなたがgithubアカウントを持っていることを前提としています。
+まず、RStudioで `Tools -> Global Options` に移動し、Git/SVN を選択します。
+パスが正しいことを確認してください。
+もしRStudioのプロジェクトをGitHubにリンクしていない場合は、 `Create RSA key` を選択します。
+そしてウインドウを閉じてください。
+次に `View public key` をクリックして、表示された公開鍵をコピーします。
+次に、WebブラウザーでGitHubアカウント(訳注:のwebページ)を開きます。
+`Settings` と `SSH and GPG keys` に移動します。
+`New SSH key` のオプションをクリックして、コピーした公開鍵を貼り付けます。
+また、GitHubで、RStudioで `create()` で作ったものと同じ名前で新しいリポジトリを作成します。
+RStudioに戻り、 `Tools -> Shell` を選択し、次のように入力して、GitHub の user.name
+と新しいパッケージ名を確実に置き換えてください。
+
 ```
 git remote add origin https://github.com/<github user.name>/<package repo name>.git
 git remote set-url origin git@github.com:<github user.name>/<package repo name>.git
@@ -114,6 +148,8 @@ git push -u origin master
 ```
 
 For instance, this is what the commands would look like for me:
+
+たとえば、私用のコマンドはこのようになります。
 
 ```
 git remote add origin https://github.com/Kayla-Morrell/myFirstPackage.git
@@ -131,9 +167,23 @@ pull` is going to fetch and download content from the remote repository and
 update the local repository to match. `git push` does the exact opposite, it 
 will upload the local repo changes to the remote repo.
 
+`git remote add` コマンドは、リモートリポジトリのURLへの新しい接続を作成し、
+簡単に参照できるように短縮名 'origin' を割り当てます。
+次に、 `git remote set-url` コマンドは、リモートのURLを  'https'
+(パブリック読み取り専用アクセス) から 'SSH' に切り替えて、
+あなたが開発者としてリポジトリへの読み書きのアクセスを行えるようにします。
+`git pull` は、リモートリポジトリからコンテンツをフェッチ・ダウンロード
+し、(訳注:リモートリポジトリに)一致するようにローカルリポジトリを更新します。
+`git push` はまったく逆のことを行い、ローカルリポジトリの変更を
+リモートリポジトリにアップロードします。
+
 Now if you look in the RStudio tab for Git, the push and pull options are 
 available. You can now push and pull from/to the local and GitHub repository 
 version of your package.
+
+Git用の RStudio のタブを見ると、プッシュとプルのオプションがあります。
+これで、パッケージのローカルと GitHub のリポジトリバージョン から/へ 
+プッシュおよびプルできます。
 
 ## DESCRIPTION file
 
