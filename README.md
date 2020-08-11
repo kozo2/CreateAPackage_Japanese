@@ -193,17 +193,31 @@ structure but if we did `check()` we will find the DESCRIPTION file needs to be
 updated. The information in the DESCRIPTION file needs to be reflective of your 
 package. These are the fields that should be changed:
 
-* Title: Should be brief, but descriptive.
-* Version: Should be 0.99.0 for pre-release packages.
+`devtools` は、パッケージをビルド、チェック、インストールするための組み込み関数を提供します。
+以前に `create()` を使って作ったパッケージは有効なパッケージ構造を持ちますが、
+`check()` を実行すると DESCRIPTION ファイルを更新する必要があることがわかります。
+DESCRIPTION ファイルの情報は、あなたのパッケージ(訳注:の内容)を反映している必要があります。
+変更する必要があるフィールドは次のとおりです:
+
+* Title: Should be brief, but descriptive. 簡潔にする必要がありますが、説明を含むべきです。
+* Version: Should be 0.99.0 for pre-release packages. プレリリースパッケージの場合は 0.99.0 にします。
 * Authors@R: Only one person should be listed as maintainer (`cre`). We do 
 accept Author/Maintainer for this field, either can be used but not both.
+メンテナ (`cre`) としてリストされるのは1人だけです。このフィールド
+には Author/Maintainer を受け入れます。どちらかを使えますが、両方は使えません。
 * Description: Should be relatively short but a detailed overview of what the 
-package functionality entails.
+package functionality entails. 
+比較的短くする必要がありますが、パッケージ機能に必要なものの詳細な概要です。
 * License: Preferably a standard license, Bioconductor core packages typically 
 use Artistic-2.0. If using a non-standard license, must include a LICENSE file 
 in your package and use `file LICENSE` in this field.
+できれば標準のライセンスにしてください。Bioconductor のコアパッケージは、
+通常 Artistic-2.0 を使います。非標準のライセンスを使用する場合は、パッケージに
+LICENSE ファイルを含め、このフィールドで `file LICENSE` を使う必要があります。
 * LazyData: Should be set to false, we find that this field being true can slow 
 down the loading of a package especially if it contains large data.
+false に設定する必要があります。このフィールドをtrueにすることは、
+特に大きなデータが含まれている場合にパッケージの読み込みを遅くする可能性があります。
 
 Throughout the development of your package you may have to update the 
 DESCRIPTION file for appropriate Depends, Imports, and Suggests fields as you 
@@ -211,6 +225,13 @@ incorporate more functionality from other packages. As the package is developing
 we also require having a `biocViews:` field in the DESCRIPTION file. This field 
 will contain at least two biocViews categories that reflect the nature of the 
 package.
+
+パッケージの開発中は、他のパッケージからより多くの機能を組み込むように、
+適切な Depends, Imports, そして Suggests フィールドの DESCRIPTION ファイル
+を更新しなければならないかもしれません。
+パッケージの開発中は、DESCRIPTIONファイルに `biocViews:` フィールドも必要です。
+このフィールドはパッケージの性質を反映する少なくとも2つの biocViews カテゴリ
+を含みます。
 
 ## R functions
 
